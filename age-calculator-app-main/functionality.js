@@ -1,7 +1,7 @@
 const form = document.querySelector("form");
 const submitButton = document.querySelector('button[type="submit"]');
 
-submitButton.addEventListener("click", (event)=>{
+form.addEventListener("submit", (event)=>{
     // prevent page from reloading as we want to use it here
         event.preventDefault();
     
@@ -27,7 +27,11 @@ submitButton.addEventListener("click", (event)=>{
             const aYears = Math.floor(millAge / 1000 / 60 / 60 / 24 / 365.25);
             const aMonths = Math.floor(millAge / 1000 / 60 / 60 / 24 % 365.25 / 30.436875);
             const aDays = Math.floor(millAge / 1000 / 60 / 60 / 24 % 365.25 % 30.436875);
-
-
-                                        console.log(`${aYears}, ${aMonths}, ${aDays}`);
+        // populating the DOM with the calculated values
+            const yyyy = document.querySelector(".years");
+            const mm = document.querySelector(".months");
+            const dd = document.querySelector(".days");
+            yyyy.textContent = aYears;
+            mm.textContent = aMonths;
+            dd.textContent = aDays;
 })
