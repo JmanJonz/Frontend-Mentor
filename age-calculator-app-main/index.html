@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
 
   <script defer type="module" src="./functionality.js"></script>
   
@@ -18,11 +19,15 @@
 </head>
 <body>
     <form action=".">
-      <label>DAY<input type="number" name="day" required></label>
-      <label>MONTH<input type="number" name="month" required></label>
-      <label>YEAR<input type="number" name="year" required></label>
-      <hr>
-      <button type="submit"><img src="./assets/images/icon-arrow.svg" alt="Submit Button Image"></button>
+      <div class="form">
+        <label>DAY<input type="number" name="day" required min="1" max="31" placeholder="DD"></label>
+        <label>MONTH<input type="number" name="month" required min="1" max="12" placeholder="MM"></label>
+        <label>YEAR<input type="number" name="year" required min="1000" max="9999" placeholder="YYYY"></label>  
+      </div>
+      <div class="buttonhr">
+        <hr>
+        <button type="submit"><img src="./assets/images/icon-arrow.svg" alt="Submit Button Image"></button>  
+      </div>
     </form>
     <div class="calculation">
       <p><span class="years">--</span>years</p>

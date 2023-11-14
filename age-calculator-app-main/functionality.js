@@ -15,6 +15,7 @@ form.addEventListener("submit", (event)=>{
         const day = formData.get("day");
         const month = formData.get("month");
         const year = formData.get("year");
+
         // create date object
             const birthDate = new Date(year, month - 1, day);
             const birthTime = birthDate.getTime();
